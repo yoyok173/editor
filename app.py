@@ -438,7 +438,7 @@ def handle_text_message(event):
                     
                     line_bot_api.reply_message(
                         event.reply_token,
-                        [audio_message]
+                        TextSendMessage(text=ret_)
                     )
                     return
     
