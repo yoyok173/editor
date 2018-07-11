@@ -1,6 +1,5 @@
 import errno
-import os
-import sys
+import os, sys
 import tempfile
 from argparse import ArgumentParser
 import urllib, urllib2, urlparse
@@ -8,7 +7,7 @@ from urllib import urlopen
 from urllib import quote
 from kbbi import KBBI
 from googletrans import Translator
-import requests, random, json
+import requests
 import time
 import wikipedia
 
