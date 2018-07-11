@@ -4,6 +4,7 @@
 import errno
 import os, sys
 import tempfile
+from bs4 import BeautifulSoup
 from argparse import ArgumentParser
 import urllib, urllib2, urlparse
 from urllib import urlopen
