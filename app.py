@@ -254,7 +254,7 @@ def handle_text_message(event):
     elif text == '/profilku':
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="~ [ R E S U L T ] ~\n\n👉 Nama: "+profile_name+"\n👉 Foto Profil: "+profile_picture+"\n👉 Pesan Status: "+profile_sm))
+            TextSendMessage(text="~ [ R E S U L T ] ~\n\n Nama: "+profile_name+"\n Foto Profil: "+profile_picture+"\n Pesan Status: "+profile_sm))
 
     elif text == "/ppku":
         profile = line_bot_api.get_group_member_profile(event.source.group_id, event.source.user_id)
