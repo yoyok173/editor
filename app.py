@@ -204,41 +204,7 @@ def handle_text_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage("Hai kak..nama saya Shin Chan \n"
-                                "saya akan membuat obrolan kamu jadi makin seru."))
-
-    elif text == '/samehadaku':
-        target = 'https://samehadaku.tv'
-        req = requests.get(target)
-        bs = BeautifulSoup(req.content, "html5lib")
-        dataa = bs.find_all("ul",{"class":"posts-items posts-list-container"})
-        dataaa = dataa[0].find_all("li",{"class":"post-item tie-standard"})
-        ret_ = "~ Last Update Anime: Samehadaku ~\n\n[ R E S U L T ]\n\n\n"
-        num = 0
-        i = 0
-        j = 0
-
-        for data in dataaa:
-            num += 1
-            if i <= 13:
-                pass
-
-            data = dataaa[i].find('a')
-            date = dataaa[j].find('span').text
-            name = data["title"]
-            link = data["href"]
-            time = date
-            ret_ += "{}).  Judul: {}".format(num, name)
-            ret_ += "\n     Link: {}".format(link)
-            ret_ += "\n     Tanggal Rilis: {}\n\n".format(time)
-            te = "✓ Total ada {} update anime.\n\n\n✓ Info update anime selengkapnya, klik:\n➡ https://www.samehadaku.tv/".format(len(dataaa))
-            i = i + 1
-            j = j + 1
-
-        line_bot_api.reply_message(
-            event.reply_token, [
-            TextSendMessage(text="Bot using by [ "+profile_name+" ] on Samehadaku:\n\n"+ret_)])
-
-        return
+                                "saya akan membuat obrolan kamu jadi makin seru.")
 
     elif text == '/bye':
         if (userId != 'Uf12a33117e93064e553855f6a4ce80eb'):
