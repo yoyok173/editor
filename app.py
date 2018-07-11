@@ -8,7 +8,7 @@ from urllib import urlopen
 from urllib import quote
 from kbbi import KBBI
 from googletrans import Translator
-import requests
+import requests, random, json
 import time
 import wikipedia
 
