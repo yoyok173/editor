@@ -425,6 +425,10 @@ def handle_text_message(event):
                         original_content_url=data["result"]["img"],
                         preview_image_url=data["result"]["img"]
                     )
+                    audio_message = AudioSendMessage(
+                        original_content_url=data["result"]["mp3"][0],
+                        duration=240000
+                    )
  #                   line_bot_api.reply_message(
  #                       event.reply_token,
  #                       TextSendMessage(text=ret_))
@@ -433,7 +437,7 @@ def handle_text_message(event):
                     
                     line_bot_api.reply_message(
                         event.reply_token,
-                        image_message
+                        audio_message
                     )
                     return
     
