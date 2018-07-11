@@ -421,21 +421,21 @@ def handle_text_message(event):
                     ret_ += "\n╠ Size : {}".format(data["result"]["size"])
                     ret_ += "\n╠ Link : {}".format(data["result"]["mp3"][0])
                     ret_ += "\n╚══[ Finish ]"
-                    line_bot_api.reply_message(
-                        event.reply_token,
-                        TextSendMessage(text=ret_))
-                    return
-
                     image_message = ImageSendMessage(
                         original_content_url=data["result"]["img"],
                         preview_image_url=data["result"]["img"]
                     )
-
                     line_bot_api.reply_message(
                         event.reply_token,
-                        image_message
-                    )
+                        TextSendMessage(text=ret_),image_message)
                     return
+
+                    
+#                    line_bot_api.reply_message(
+#                        event.reply_token,
+#                        image_message
+#                    )
+#                    return
     
     elif text[0:].lower().strip().startswith('/kbbi '):
         line_bot_api.reply_message(
