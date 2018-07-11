@@ -12,7 +12,7 @@ from urllib import quote
 from kbbi import KBBI
 from googletrans import Translator
 import requests
-import time, json
+import time, json, random
 import wikipedia
 
 from flask import Flask, request, abort
@@ -367,7 +367,7 @@ def handle_text_message(event):
     elif text == '/sp':
         start = time.time()
         elapsed_time = time.time() - start
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=format(str(elapsed_time))))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=format(elapsed_time)))
 
 
     elif '/cariyoutube ' in text:
