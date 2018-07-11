@@ -1,0 +1,10 @@
+flask
+line-bot-sdk
+argparse
+pafy
+bs4
+requests
+youtube-dl
+googletrans
+wikipedia
+humanfriendly
