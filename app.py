@@ -11,7 +11,7 @@ from urllib import quote
 from kbbi import KBBI
 from googletrans import Translator
 import requests
-import time
+import time, json
 import wikipedia
 
 from flask import Flask, request, abort
