@@ -75,6 +75,12 @@ def callback():
 def handle_text_message(event):
 
     text=event.message.text
+    groupId = event.source.group_id
+    userId = event.source.user_id
+    profile = line_bot_api.get_profile(userId)
+    profile_name = profile.display_name
+    profile_picture = profile.picture_url
+    profile_sm = profile.status_message
     
     if isinstance(event.source, SourceGroup):
         subject = line_bot_api.get_group_member_profile(event.source.group_id,
