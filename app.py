@@ -358,7 +358,7 @@ def handle_text_message(event):
         else:
             with requests.session() as web:
                 web.headers["user-agent"] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-            r = web.get("http://api.mathjs.org/v4/?expr={}".format(urllib.parse.quote(search)))
+            r = web.get("http://api.mathjs.org/v4/?expr={}".format(urllib2.quote(search)))
             data=r.text
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text=str(data)))
 
