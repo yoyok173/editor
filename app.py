@@ -421,12 +421,13 @@ def handle_text_message(event):
                     ret_ += "\n╠ Size : {}".format(data["result"]["size"])
                     ret_ += "\n╠ Link : {}".format(data["result"]["mp3"][0])
                     ret_ += "\n╚══[ Finish ]"
+                    audio = data["result"]["m4a"][0]
                     image_message = ImageSendMessage(
                         original_content_url=data["result"]["img"],
                         preview_image_url=data["result"]["img"]
                     )
                     audio_message = AudioSendMessage(
-                        original_content_url=data["result"]["mp3"][0],
+                        original_content_url=audio,
                         duration=240000
                     )
  #                   line_bot_api.reply_message(
