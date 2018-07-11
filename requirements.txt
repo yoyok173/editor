@@ -8,3 +8,4 @@ youtube-dl
 googletrans
 wikipedia
 humanfriendly
+html5lib
