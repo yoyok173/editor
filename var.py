@@ -53,7 +53,7 @@ img_url_tag = { 'bye':['https://image.ibb.co/ibvkKa/akatsukileave.jpg','https://
             'dude what':['https://image.ibb.co/gtcEEa/dude_what.jpg','https://image.ibb.co/gGrD7v/dude_what_prev.jpg'],
             #'':['',''],
            }
-f = open('statics/gombal.txt', 'r')
+f = open('gombal.txt', 'r')
 list_gombal = (f.read()).splitlines()
 f.close()
 altia_url_tag ={'tertangkap basah':['https://image.ibb.co/neFJqF/tertangkap_basah_prev.jpg','https://image.ibb.co/nLEdqF/tertangkapbasah.jpg'],
