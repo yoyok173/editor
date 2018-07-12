@@ -12,6 +12,7 @@ from urllib import quote
 from kbbi import KBBI
 from googletrans import Translator
 import requests
+from var import *
 import time, json, random
 import wikipedia
 
@@ -94,6 +95,7 @@ def handle_text_message(event):
     text=event.message.text
     inputText = event.message.text
     textArray = inputText.lower().split()
+    cmd = search(r'\#(\w*)\s*(.*)', text)
     groupId = event.source.group_id
     userId = event.source.user_id
     profile = line_bot_api.get_profile(userId)
@@ -237,6 +239,14 @@ def handle_text_message(event):
 
     elif 'semangatin' in textArray:
         semangat(event, line_bot_api)
+        
+    elif cmd.group(1) == 'gombal':
+        if cmd.group(2) != '':
+            txt = 'eh ' + cmd.group(2) + ',\n' + choice(list_gombal)
+        else:
+            txt = choice(list_gombal)
+        line_bot_api.reply_message(
+            event.reply_token, TextSendMessage(text=txt))
 
     elif text == '/bye':
         if (userId != 'Uf12a33117e93064e553855f6a4ce80eb'):
