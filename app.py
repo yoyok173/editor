@@ -240,9 +240,9 @@ def handle_text_message(event):
     elif 'semangatin' in textArray:
         semangat(event, line_bot_api)
         
-    if text[0] == '#':
+    elif text[0] == '#':
         cmd = search(r'\#(\w*)\s*(.*)', text)
-        elif cmd.group(1) == 'gombal':
+        if cmd.group(1) == 'gombal':
             if cmd.group(2) != '':
                 txt = 'eh ' + cmd.group(2) + ',\n' + choice(list_gombal)
             else:
