@@ -14,6 +14,7 @@ from googletrans import Translator
 import requests
 from var import *
 import time, json, random
+from random import choice
 import wikipedia
 
 from flask import Flask, request, abort
