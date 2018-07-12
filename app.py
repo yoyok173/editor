@@ -37,7 +37,8 @@ from linebot.models import (
 
 translator = Translator()
 wiki_settings = {}
-
+semangat_list = ['Semangat cuy!', 'Lo pasti bisa!', 'Pasti sukses', 'Good luck!',\
+                 'Apa sih yang lo ga bisa?', 'Jangan putus asa, masih ada harapan']
 
 app = Flask(__name__)
 
@@ -79,6 +80,12 @@ def ooh_wee(event, line_bot_api):
     line_bot_api.reply_message(
         event.reply_token,
         audio_message
+    )
+
+def semangat(event, line_bot_api):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=semangat_list[random.randint(0, len(semangat_list)-1)])
     )
 
 @handler.add(MessageEvent, message=TextMessage)
@@ -227,6 +234,9 @@ def handle_text_message(event):
                                 "saya akan membuat obrolan kamu jadi makin seru."))
     elif ('ooh' in textArray) and ('wee' in textArray):
         ooh_wee(event, line_bot_api)
+
+    elif 'semangatin' in textArray:
+        semangat(event, line_bot_api)
 
     elif text == '/bye':
         if (userId != 'Uf12a33117e93064e553855f6a4ce80eb'):
