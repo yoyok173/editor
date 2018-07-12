@@ -13,6 +13,7 @@ from kbbi import KBBI
 from googletrans import Translator
 import requests
 from var import *
+from re import search
 import time, json, random
 from random import choice
 import wikipedia
